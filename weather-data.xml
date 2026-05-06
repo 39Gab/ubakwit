@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="weather-stylesheet.xsl"?>
+<weather-system>
+    <metadata>
+        <system-name>UBakwit Disaster Response System</system-name>
+        <location>Lipa City, Batangas</location>
+        <last-updated>2026-05-06T13:10:00Z</last-updated>
+        <status>ACTIVE</status>
+    </metadata>
+    
+    <climate-data>
+        <sensor id="S001" location="Main Campus">
+            <timestamp>2026-05-06T13:09:45Z</timestamp>
+            <rainfall unit="mm">62.5</rainfall>
+            <temperature unit="C">23.8</temperature>
+            <humidity unit="%">85</humidity>
+            <wind-speed unit="km/h">11.2</wind-speed>
+            <wind-direction>NE</wind-direction>
+            <pressure unit="hPa">1012.3</pressure>
+        </sensor>
+        <sensor id="S002" location="Gate Area">
+            <timestamp>2026-05-06T13:09:30Z</timestamp>
+            <rainfall unit="mm">58.9</rainfall>
+            <temperature unit="C">24.1</temperature>
+            <humidity unit="%">87</humidity>
+            <wind-speed unit="km/h">10.8</wind-speed>
+            <wind-direction>NNE</wind-direction>
+        </sensor>
+    </climate-data>
+    
+    <evacuation-routes>
+        <route id="R001" status="OPTIMAL">
+            <name>Main Gate to Gymnasium Shelter</name>
+            <distance unit="m">450</distance>
+            <estimated-time unit="min">5</estimated-time>
+            <hazards>
+                <hazard type="flood" level="LOW"/>
+                <hazard type="debris" level="NONE"/>
+            </hazards>
+            <waypoints>
+                <waypoint lat="14.0001" lng="121.1234">Main Gate</waypoint>
+                <waypoint lat="14.0005" lng="121.1240">Academic Center</waypoint>
+                <waypoint lat="14.0010" lng="121.1245">Gymnasium Shelter</waypoint>
+            </waypoints>
+        </route>
+        <route id="R002" status="CAUTION">
+            <name>Library to Field Shelter</name>
+            <distance unit="m">320</distance>
+            <estimated-time unit="min">4</estimated-time>
+            <hazards>
+                <hazard type="flood" level="MEDIUM"/>
+                <hazard type="wind" level="LOW"/>
+            </hazards>
+        </route>
+        <route id="R003" status="OPTIMAL">
+            <name>East Wing to Covered Court</name>
+            <distance unit="m">150</distance>
+            <estimated-time unit="min">2</estimated-time>
+            <hazards>
+                <hazard type="debris" level="LOW"/>
+            </hazards>
+        </route>
+        <route id="R004" status="DANGER">
+            <name>South Gate to Multi-Purpose Hall</name>
+            <distance unit="m">600</distance>
+            <estimated-time unit="min">8</estimated-time>
+            <hazards>
+                <hazard type="flood" level="HIGH"/>
+                <hazard type="debris" level="HIGH"/>
+            </hazards>
+        </route>
+    </evacuation-routes>
+    
+    <coping-strategies>
+        <strategy id="CS001" priority="HIGH">
+            <title>Immediate Shelter Protocol</title>
+            <description>Move to designated safe shelters immediately</description>
+            <icon>home</icon>
+        </strategy>
+        <strategy id="CS002" priority="HIGH">
+            <title>Online Class Transition</title>
+            <description>Shift all classes to online platforms</description>
+            <icon>laptop</icon>
+        </strategy>
+        <strategy id="CS003" priority="MEDIUM">
+            <title>Flood Zone Avoidance</title>
+            <description>Stay clear of low-lying and flood-prone areas</description>
+            <icon>triangle-alert</icon>
+        </strategy>
+        <strategy id="CS004" priority="MEDIUM">
+            <title>Emergency Communication</title>
+            <description>Maintain contact with campus emergency hotlines</description>
+            <icon>phone</icon>
+        </strategy>
+    </coping-strategies>
+    
+    <protocols>
+        <protocol id="P001" name="Class Suspension Protocol">
+            <trigger>Rainfall > 50mm/hour</trigger>
+            <action>Suspend all face-to-face classes</action>
+            <status>READY</status>
+        </protocol>
+        <protocol id="P002" name="Campus Evacuation Alpha">
+            <trigger>Flood Level > 1.0m at Main Gate</trigger>
+            <action>Evacuate all ground floor personnel</action>
+            <status>STANDBY</status>
+        </protocol>
+        <protocol id="P003" name="Power Grid Isolation">
+            <trigger>Lightning Strike < 5km radius</trigger>
+            <action>Switch to backup solar/battery grid</action>
+            <status>READY</status>
+        </protocol>
+    </protocols>
+</weather-system>
